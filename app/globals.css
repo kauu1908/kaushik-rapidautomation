@@ -1,0 +1,55 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --color-luxury-black: #0F0F0F;
+  --color-luxury-ivory: #F8F5F0;
+  --color-luxury-gold: #C9A646;
+  --color-luxury-champagne: #E6D3A3;
+  --color-luxury-stone: #EAE7E2;
+  --color-luxury-slate: #D4CFCA;
+
+  --font-serif: var(--font-cinzel);
+  --font-sans: var(--font-inter);
+}
+
+@layer base {
+  body {
+    background-color: var(--color-luxury-ivory);
+    color: var(--color-luxury-black);
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+  }
+
+  /* Custom scrollbar for a premium feel */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-luxury-ivory);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-luxury-gold);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #a68434;
+  }
+}
+
+/* Base Utility Classes for layout */
+.section-padding {
+  @apply py-16 md:py-24 px-8 md:px-12 lg:px-16 mx-auto;
+}
+
+.luxury-border {
+  @apply border border-luxury-black/5;
+}
+
+.hover-lift {
+  @apply transition-transform duration-500 ease-out hover:-translate-y-1;
+}
